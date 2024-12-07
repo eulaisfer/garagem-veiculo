@@ -1,0 +1,94 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f0f9; 
+    color: #333;
+    padding-bottom: 50px; /* espaço pro footer */
+}
+
+/* cabeçalho */
+header {
+    background-color: #f8c7d9;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #f0a6c1; 
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* anúncios */
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* container de veículos */
+.carros-container {
+    display: flex;
+    flex-direction: column; /* colocar um embaixo do outro */
+    align-items: center;
+}
+
+.carro {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.carro:hover {
+    transform: translateY(-5px); /* efeito de hover */
+}
+
+.carro img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.carro h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #f8c7d9; /* rosa claro */
+}
+
+.carro p {
+    font-size: 1em;
+    color: #777;
+}
+
+.carro p strong {
+    color: #333;
+}
+
+/* rodapé */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8c7d9;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

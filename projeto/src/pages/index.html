@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garagem de Veículos</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Garagem de Veículos</h1>
+        <p>Confira os veículos à venda!</p>
+    </header>
+
+    <section>
+        <h2>Anúncios de Veículos</h2>
+        <div class="carros-container" id="carros-container">
+            <!-- Os carros serão mostrados aqui  -->
+        </div>
+    </section>
+
+    <footer>
+        <p>Endereço: Rua dos expedicionários, 123 - Cidade Campo Grande - MS</p>
+    </footer>
+
+    <script>
+        // função que carrega os veículos dinamicamente
+        fetch('/veiculo')
+            .then(response => response.json())
+            .then(veiculos => {
+                const container = document.getElementById('carros-container');
+                veiculos.forEach(veiculo => {
+                    const div = document.createElement('div');
+                    div.classList.add('carro');
+                    div.innerHTML = `
+                        <img src="/images/${veiculo.img}" alt="${veiculo.nome}" class="carro-img">
+                        <h3>${veiculo.nome}</h3>
+                        <p><strong>Fabricante:</strong> ${veiculo.fabricante}</p>
+                        <p><strong>Ano:</strong> ${veiculo.ano}</p>
+                        <p><strong>Combustível:</strong> ${veiculo.combustivel}</p>
+                        <p><strong>Cor:</strong> ${veiculo.cor}</p>
+                        <p><strong>Preço:</strong> R$ ${veiculo.preco}</p>
+                    `;
+                    container.appendChild(div);
+                });
+            })
+            .catch(error => console.error('Erro ao carregar os veículos:', error));
+    </script>
+</body>
+
+
+</html>
